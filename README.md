@@ -86,7 +86,7 @@ git push -u origin main
 
 ## Live Demo
 
-[View live demo on Netlify](#) <!-- Replace with your actual Netlify URL once deployed -->
+[Caption Generation Demo](https://caption-generator-ui.netlify.app/)<!-- Replace with your actual Netlify URL once deployed -->
 
 ## License
 
