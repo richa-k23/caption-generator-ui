@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,7 +62,15 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
-				}
+				},
+				// Custom pastel colors for our project
+				"soft-purple": "#E5DEFF",
+				"soft-pink": "#FFDEE2",
+				"soft-peach": "#FDE1D3", 
+				"soft-blue": "#D3E4FD",
+				"soft-mint": "#DEFFEE",
+				"primary-purple": "#8A6FDF",
+				"dark-purple": "#6847C0",
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -84,11 +93,31 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'fade-in': {
+					"0%": {
+						opacity: "0",
+						transform: "translateY(10px)"
+					},
+					"100%": {
+						opacity: "1",
+						transform: "translateY(0)"
+					}
+				},
+				'spin-slow': {
+					from: {
+						transform: 'rotate(0deg)'
+					},
+					to: {
+						transform: 'rotate(360deg)'
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'fade-in': 'fade-in 0.3s ease-out',
+				'spin-slow': 'spin-slow 2s linear infinite'
 			}
 		}
 	},
