@@ -32,8 +32,8 @@ A beautiful UI for generating platform-specific captions using Google's Gemini A
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/your-username/caption-craft-platform.git
-cd caption-craft-platform
+git clone https://github.com/richa-k23/caption-generator-ui.git
+cd caption-generator-ui
 ```
 
 2. Install dependencies:
