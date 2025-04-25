@@ -1,5 +1,5 @@
 
-const GEMINI_API_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-1.0-pro:generateContent";
+const GEMINI_API_URL = "https://generativelanguage.googleapis.com/v1/models/gemini-1.0-pro:generateContent";
 
 interface GeminiResponse {
   caption: string;
@@ -18,6 +18,8 @@ export const generateCaption = async (
     The caption should be appropriate for ${platform}'s audience and format.
     Include relevant emojis where appropriate.
     Keep it concise and engaging.`;
+
+    console.log("Sending request to Gemini API with prompt:", prompt);
 
     const response = await fetch(`${GEMINI_API_URL}?key=${apiKey}`, {
       method: "POST",
@@ -38,10 +40,13 @@ export const generateCaption = async (
     });
 
     if (!response.ok) {
+      const errorData = await response.json();
+      console.error("Gemini API error:", errorData);
       throw new Error(`HTTP error! Status: ${response.status}`);
     }
 
     const data = await response.json();
+    console.log("Gemini API response:", data);
     const generatedText = data.candidates[0].content.parts[0].text;
     
     return generatedText || "Failed to generate a caption. Please try again.";
