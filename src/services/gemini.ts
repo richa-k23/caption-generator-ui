@@ -1,5 +1,5 @@
 
-const GEMINI_API_URL = "https://generativelanguage.googleapis.com/v1/models/gemini-1.0-pro:generateContent";
+const GEMINI_API_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent";
 
 interface GeminiResponse {
   caption: string;
@@ -20,6 +20,7 @@ export const generateCaption = async (
     Keep it concise and engaging.`;
 
     console.log("Sending request to Gemini API with prompt:", prompt);
+    console.log("Using API URL:", GEMINI_API_URL);
 
     const response = await fetch(`${GEMINI_API_URL}?key=${apiKey}`, {
       method: "POST",
